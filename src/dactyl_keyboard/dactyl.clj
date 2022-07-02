@@ -213,11 +213,16 @@
     :else 0))
 
 (defn offset-for-column-ortho [col, row]
-  (cond (and pinky-125u
-             (= col lastcol)
-             (= row cornerrow))
-        -2
-        :else 0))
+  (cond 
+    (and pinky-125u
+         (= col lastcol)
+         (not= row cornerrow))
+    0.5
+    (and pinky-125u
+         (= col lastcol)
+         (= row cornerrow))
+    -2
+    :else 0))
 
 (defn apply-key-geometry [translate-fn rotate-x-fn rotate-y-fn column row shape]
   (let [column-angle (* β (- centercol column))
@@ -232,7 +237,6 @@
         column-z-delta (* column-radius (- 1 (Math/cos column-angle)))
         placed-shape-ortho (->> shape
                                 (translate-fn [(offset-for-column-ortho column, row) 0 (- row-radius)])
-                                ; (translate-fn [0 0 (- row-radius)])
                                 (rotate-x-fn  (* α (- centerrow row)))
                                 (translate-fn [0 0 row-radius])
                                 (rotate-y-fn  column-angle)
