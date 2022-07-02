@@ -38,7 +38,7 @@
           (= column 3) [0 2.82 -4.5]
           (>= column 5) [0 -12 5.64]    ; original [0 -5.8 5.64]
           :else [0 0 0])
-    (cond (= column 2) [0 8.82 -4.5]
+    (cond (= column 2) [0 2.82 -4.5]
           (>= column 4) [0 -12 5.64]    ; original [0 -5.8 5.64]
           :else [0 0 0])))
 
@@ -88,7 +88,17 @@
 
 (def pink [220/255 163/255 163/255 1])
 (def red [220/255 20/255 20/255 1])
+(def green [20/255 220/255 20/255 1])
 (def blue [20/255 20/255 220/255 1])
+
+(def keyswitch-height 14.15)
+(def keyswitch-width 14.15)
+
+(def sa-profile-key-height 12.7)
+
+(def plate-thickness 4)
+(def mount-width (+ keyswitch-width 3.2))
+(def mount-height (+ keyswitch-height 2.7))
 
 
 (def kailh_features ;;Contains the solder points and the protruding circles
@@ -113,7 +123,7 @@
   (->>(difference
     (union (cube 12 (+  sla_tolerance 6) ( + 1.825 sla_tolerance)) 
            kailh_features)
-    (->> (cube 3.7   4  3)(translate [4.1 (- -3.05 (/ sla_tolerance 2)) 0])) ;;		(->> (cube 3.2 3 3)(translate [4.1 -2.6 0]))			
+    (->> (cube 4 4  3)(translate [4.4 (- -3.05 (/ sla_tolerance 2)) 0])) ;;		(->> (cube 3.2 3 3)(translate [4.1 -2.6 0]))			
     )
   (color pink)))
 
@@ -125,15 +135,14 @@
            ))
     (difference
       (->>( cube 3.8 2.3 1.)(translate [-3.6 -4.1 -2.0]) )  ;;to prevent cracking decreased cube y from 2.3 to 2
-      ;(->> (cube 4.8 1.8 0.9)(rotate (deg2rad 55) [1 0 0])(translate [-3.6 -3.25 -2.6]))
       )))
 
 (def kalih_cutout
   (->>(union 
         (difference
           (union 
-            (->> (cube 11 17.6 3.2)(translate [ 0 -4.5 0]))		;main box that the switch is cut from
-            (->>(cube 17.4 17.6 1)(translate [ 0.7 -4.5 1.1])) ;bottom cover that covers the remainder of the bottom of the switch hole
+            (->> (cube 11 (+ keyswitch-height 3) 3.2)(translate [ 0 -4.5 0]) (color green))		;main box that the switch is cut from
+            (->> (cube 17.2 (+ keyswitch-height 3) 1)(translate [ 0.7 -4.5 1.1]) (color red)) ;bottom cover that covers the remainder of the bottom of the switch hole
             kalih_tab
             )
           #_(->> (cube 11 9.4 3)(translate [ 0 -0.4 0]))
@@ -142,33 +151,25 @@
           (->>(cube 20 10 5)(translate [0 -13 0]))    ;;This cuts out part of the bottom cover.  Used to ensure drainage when SLA printing.
           ))
     (translate [-0.7 4.5 -1])
-    (color red)
+    
     )
   )
+
 
 (def mx_clone_hole_hotswap  ;;Special hole for hotswap holes because the box has to be a bit bigger so it makes contact with the kalih cutout.
   (->>(difference 
         (union
-          (->>(cube 17.3, 18.2, 5)(translate [0 0 -0.9]))   ;;Main box that everything is cut from
+          (->>(cube (+ keyswitch-width 3), (+ keyswitch-height 3), plate-thickness) (color blue))   ;;Main box that everything is cut from
           )
-        (->>(cube 14.8, 13.8, 6)(translate [0 0 -1]) ) ;;Inner square cut out
-        (->>(cube 14.2, 15., 4.32)(translate [0 0 -2])) ;;The buttom inner cut out.  This modifies the notch height
-        (->> (cube 3.7,15.,  6)(translate [(/ 8.5 2), 0, -1]));Left and right rectangle cut out.  Controls the width of notch
-        (->> (cube 3.7,15.,  6)(translate [(/ -8.5 2), 0, -1])))
-    (translate [0 0 2.5])
-    (color blue)))
+        (->>(cube keyswitch-width, keyswitch-height, 6) (color green) ) ;;Inner square cut out
+        (->>(cube 14.2, 15., 4.32)(translate [0 0 -1.1])) ;;The bottom inner cut out.  This modifies the notch height
+        (->> (cube 3.7,15.,  6)(translate [(/ 8.5 2), 0, -0.1]));Left and right rectangle cut out.  Controls the width of notch
+        (->> (cube 3.7,15.,  6)(translate [(/ -8.5 2), 0, -0.1])))
+    (translate [0 0 2])))
 
 (def single-plate
     (union (->> mx_clone_hole_hotswap (rotate (/ π 2) [0 0 1])) (->> kalih_cutout) (rotate (/ π 2) [0 0 1])))
 
-(def keyswitch-height 14.15)
-(def keyswitch-width 14.15)
-
-(def sa-profile-key-height 12.7)
-
-(def plate-thickness 4.1)
-(def mount-width (+ keyswitch-width 3.5))
-(def mount-height (+ keyswitch-height 3))
 
 ;;;;;;;;;;;;;;;;
 ;; SA Keycaps ;;
@@ -1556,6 +1557,8 @@
 
 (spit "things/switch-socket.scad"
       (write-scad (union single-plate)))
+
+
 
 (spit "things/right-plate-laser.scad"
       (write-scad
