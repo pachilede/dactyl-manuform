@@ -13,38 +13,38 @@
 ;; Shape parameters ;;
 ;;;;;;;;;;;;;;;;;;;;;;
 
-(def nrows 5)
-(def ncols 7)
+(def nrows 6)
+(def ncols 6)
 
 (def α (/ π 12))                        ; curvature of the columns
 (def β (/ π 36))                        ; curvature of the rows
 (def centerrow (- nrows 3))             ; controls front-back tilt
-(def centercol 4)                       ; controls left-right tilt / tenting (higher number is more tenting)
+(def centercol 2)                       ; controls left-right tilt / tenting (higher number is more tenting)
 (def tenting-angle (/ π 12))            ; or, change this for more precise tenting control
 
-(def pinky-15u true)                   ; controls whether the outer column uses 1.5u keys
-(def first-15u-row 0)                   ; controls which should be the first row to have 1.5u keys on the outer column
-(def last-15u-row 3)                    ; controls which should be the last row to have 1.5u keys on the outer column
+(def pinky-125u true)                    ; controls whether the outer column uses 1.25u keys
+(def first-125u-row 0)                   ; controls which should be the first row to have 1.25u keys on the outer column
+(def last-125u-row 3)                    ; controls which should be the last row to have 1.25u keys on the outer column
 
-(def extra-row true)                   ; adds an extra bottom row to the outer columns
-(def inner-column true)                ; adds an extra inner column (two less rows than nrows)
-(def thumb-style "cf")                ; toggles between "default", "mini", and "cf" thumb cluster
+(def extra-row false)                    ; adds an extra bottom row to the outer columns
+(def inner-column false)                ; adds an extra inner column (two less rows than nrows):
+(def thumb-style "mini")                ; toggles between "default", "mini", and "cf" thumb cluster
 
-(def column-style :standard)
+(def column-style :orthographic)
 
-(defn column-offset [column]
+(defn column-offset [column]            ; vertical offsets for columns
   (if inner-column
     (cond (<= column 1) [0 -2 0]
           (= column 3) [0 2.82 -4.5]
           (>= column 5) [0 -12 5.64]    ; original [0 -5.8 5.64]
           :else [0 0 0])
-    (cond (= column 2) [0 2.82 -4.5]
+    (cond (= column 2) [0 8.82 -4.5]
           (>= column 4) [0 -12 5.64]    ; original [0 -5.8 5.64]
           :else [0 0 0])))
 
 (def thumb-offsets [6 -3 7])
 
-(def keyboard-z-offset 8)               ; controls overall height; original=9 with centercol=3; use 16 for centercol=2
+(def keyboard-z-offset 16)               ; controls overall height; original=9 with centercol=3; use 16 for centercol=2
 
 (def extra-width 2.5)                   ; extra space between the base of keys; original= 2
 (def extra-height 1.0)                  ; original= 0.5
@@ -167,7 +167,19 @@
                                           (translate [0 0 12])))]
                    (->> key-cap
                         (translate [0 0 (+ 5 plate-thickness)])
-                        (color [240/255 223/255 175/255 1])))})
+                        (color [240/255 223/255 175/255 1])))
+             1.25 (let [bl2 (/ 18.25 2)
+                       bw2 (/ 22.8125 2)
+                       key-cap (hull (->> (polygon [[bw2 bl2] [bw2 (- bl2)] [(- bw2) (- bl2)] [(- bw2) bl2]])
+                                          (extrude-linear {:height 0.1 :twist 0 :convexity 0})
+                                          (translate [0 0 0.05]))
+                                     (->> (polygon [[11 6] [-11 6] [-11 -6] [11 -6]])
+                                          (extrude-linear {:height 0.1 :twist 0 :convexity 0})
+                                          (translate [0 0 12])))]
+                   (->> key-cap
+                        (translate [0 0 (+ 5 plate-thickness)])
+                        (color [240/255 223/255 175/255 1])))
+             })
 
 ;; Fill the keyholes instead of placing a a keycap over them
 (def keyhole-fill (->> (cube keyswitch-height keyswitch-width plate-thickness)
@@ -193,12 +205,12 @@
 (def column-x-delta (+ -1 (- (* column-radius (Math/sin β)))))
 
 (defn offset-for-column [col, row]
-  (if (and pinky-15u
+  (cond (and pinky-125u
            (= col lastcol)
-           (<= row last-15u-row)
-           (>= row first-15u-row))
+           (<= row last-125u-row)
+           (>= row first-125u-row))
     4.7625
-    0))
+    :else 0))
 
 (defn apply-key-geometry [translate-fn rotate-x-fn rotate-y-fn column row shape]
   (let [column-angle (* β (- centercol column))
@@ -271,29 +283,29 @@
 (def caps
   (apply union
          (conj (for [column columns
-               row rows
-               :when (or (and (= column 0) (< row 3))
-                         (and (.contains [1 2] column) (< row 4))
-                         (.contains [3 4 5 6] column))]
-               (->> (sa-cap (if (and pinky-15u (= column lastcol) (not= row lastrow)) 1.5 1))
-                    (key-place column row)))
+                     row rows
+                     :when (or (and (= column 0) (< row 5))
+                               (and (.contains [0 1 4 5] column) (<= row 4))
+                               (and (.contains [2 3] column) (<= row 5)))]
+                 (->> (sa-cap (if (and pinky-125u (= column lastcol) (> row 0) (<= row last-125u-row)) 1.25 1))
+                      (key-place column row)))
                (list (key-place 0 0 (sa-cap 1))
-                 (key-place 0 1 (sa-cap 1))
-                 (key-place 0 2 (sa-cap 1))))))
+                     (key-place 0 1 (sa-cap 1))
+                     (key-place 0 2 (sa-cap 1))))))
 
 (def caps-fill
   (apply union
          (conj (for [column columns
-               row rows
-               :when (or (.contains [(+ innercol-offset 2) (+ innercol-offset 3)] column)
-                         (and (.contains [(+ innercol-offset 4) (+ innercol-offset 5)] column) extra-row (= ncols (+ innercol-offset 6)))
-                         (and (.contains [(+ innercol-offset 4)] column) extra-row (= ncols (+ innercol-offset 5)))
-                         (and inner-column (not= row cornerrow)(= column 0))
-                         (not= row lastrow))]
+                     row rows
+                     :when (or (.contains [(+ innercol-offset 2) (+ innercol-offset 3)] column)
+                               (and (.contains [(+ innercol-offset 4) (+ innercol-offset 5)] column) extra-row (= ncols (+ innercol-offset 6)))
+                               (and (.contains [(+ innercol-offset 4)] column) extra-row (= ncols (+ innercol-offset 5)))
+                               (and inner-column (not= row cornerrow)(= column 0))
+                               (not= row lastrow))]
                  (key-place column row keyhole-fill))
                (list (key-place 0 0 keyhole-fill)
-                 (key-place 0 1 keyhole-fill)
-                 (key-place 0 2 keyhole-fill)))))
+                     (key-place 0 1 keyhole-fill)
+                     (key-place 0 2 keyhole-fill)))))
 
 ;placement for the innermost column
 (def key-holes-inner
@@ -321,7 +333,7 @@
 (def web-post-br (translate [(- (/ mount-width 1.95) post-adj) (+ (/ mount-height -1.95) post-adj) 0] web-post))
 
 ; wide posts for 1.5u keys in the main cluster
-(if pinky-15u
+(if pinky-125u
   (do (def wide-post-tr (translate [(- (/ mount-width 1.2) post-adj)  (- (/ mount-height  2) post-adj) 0] web-post))
     (def wide-post-tl (translate [(+ (/ mount-width -1.2) post-adj) (- (/ mount-height  2) post-adj) 0] web-post))
     (def wide-post-bl (translate [(+ (/ mount-width -1.2) post-adj) (+ (/ mount-height -2) post-adj) 0] web-post))
@@ -982,8 +994,8 @@
 (defn bottom-hull [& p]
   (hull p (bottom 0.001 p)))
 
-(def left-wall-x-offset 4)
-(def left-wall-z-offset 1)
+(def left-wall-x-offset 5)
+(def left-wall-z-offset 3)
 
 (defn left-key-position [row direction]
   (map - (key-position 0 row [(* mount-width -0.5) (* direction mount-height 0.5) 0]) [left-wall-x-offset 0 left-wall-z-offset]) )
@@ -1017,35 +1029,35 @@
               (partial key-place x2 y2) dx2 dy2 post2))
 
 (def right-wall
-  (if pinky-15u
+  (if pinky-125u
     (union
      ; corner between the right wall and back wall
-     (if (> first-15u-row 0)
+     (if (> first-125u-row 0)
        (key-wall-brace lastcol 0 0 1 web-post-tr lastcol 0 1 0 web-post-tr)
        (union (key-wall-brace lastcol 0 0 1 web-post-tr lastcol 0 0 1 wide-post-tr)
               (key-wall-brace lastcol 0 0 1 wide-post-tr lastcol 0 1 0 wide-post-tr)))
      ; corner between the right wall and front wall
-     (if (= last-15u-row extra-cornerrow)
+     (if (= last-125u-row extra-cornerrow)
        (union (key-wall-brace lastcol extra-cornerrow 0 -1 web-post-br lastcol extra-cornerrow 0 -1 wide-post-br)
               (key-wall-brace lastcol extra-cornerrow 0 -1 wide-post-br lastcol extra-cornerrow 1 0 wide-post-br))
        (key-wall-brace lastcol extra-cornerrow 0 -1 web-post-br lastcol extra-cornerrow 1 0 web-post-br))
 
-     (if (>= first-15u-row 2)
-       (for [y (range 0 (dec first-15u-row))]
+     (if (>= first-125u-row 2)
+       (for [y (range 0 (dec first-125u-row))]
          (union (key-wall-brace lastcol y 1 0 web-post-tr lastcol y 1 0 web-post-br)
                 (key-wall-brace lastcol y 1 0 web-post-br lastcol (inc y) 1 0 web-post-tr))))
 
-     (if (>= first-15u-row 1)
-       (for [y (range (dec first-15u-row) first-15u-row)] (key-wall-brace lastcol y 1 0 web-post-tr lastcol (inc y) 1 0 wide-post-tr)))
+     (if (>= first-125u-row 1)
+       (for [y (range (dec first-125u-row) first-125u-row)] (key-wall-brace lastcol y 1 0 web-post-tr lastcol (inc y) 1 0 wide-post-tr)))
 
-     (for [y (range first-15u-row (inc last-15u-row))] (key-wall-brace lastcol y 1 0 wide-post-tr lastcol y 1 0 wide-post-br))
-     (for [y (range first-15u-row last-15u-row)] (key-wall-brace lastcol (inc y) 1 0 wide-post-tr lastcol y 1 0 wide-post-br))
+     (for [y (range first-125u-row (inc last-125u-row))] (key-wall-brace lastcol y 1 0 wide-post-tr lastcol y 1 0 wide-post-br))
+     (for [y (range first-125u-row last-125u-row)] (key-wall-brace lastcol (inc y) 1 0 wide-post-tr lastcol y 1 0 wide-post-br))
 
-     (if (<= last-15u-row (- extra-cornerrow 1))
-       (for [y (range last-15u-row (inc last-15u-row))] (key-wall-brace lastcol y 1 0 wide-post-br lastcol (inc y) 1 0 web-post-br)))
+     (if (<= last-125u-row (- extra-cornerrow 1))
+       (for [y (range last-125u-row (inc last-125u-row))] (key-wall-brace lastcol y 1 0 wide-post-br lastcol (inc y) 1 0 web-post-br)))
 
-     (if (<= last-15u-row (- extra-cornerrow 2))
-       (for [y (range (inc last-15u-row) extra-cornerrow)]
+     (if (<= last-125u-row (- extra-cornerrow 2))
+       (for [y (range (inc last-125u-row) extra-cornerrow)]
          (union (key-wall-brace lastcol y 1 0 web-post-br lastcol (inc y) 1 0 web-post-tr)
                 (key-wall-brace lastcol (inc y) 1 0 web-post-tr lastcol (inc y) 1 0 web-post-br))))
      )
@@ -1333,17 +1345,20 @@
     (->> (screw-insert-shape bottom-radius top-radius height)
          (translate (map + offset [(first position) (second position) (/ height 2)])))))
 
-; Offsets for the screw inserts dependent on extra-row & pinky-15u
-(when (and pinky-15u extra-row)
+; Offsets for the screw inserts dependent on extra-row & pinky-125u
+(when (and pinky-125u extra-row)
     (def screw-offset-tr [1 7 0])
     (def screw-offset-br [7 14 0]))
-(when (and pinky-15u (false? extra-row))
+(when (and pinky-125u (false? extra-row))
     (def screw-offset-tr [1 7 0])
-    (def screw-offset-br [6.5 15.5 0]))
-(when (and (false? pinky-15u) extra-row)
+    (def screw-offset-br [3 15.5 0]))
+(when (and pinky-125u (false? extra-row) (< last-125u-row cornerrow))
+    (def screw-offset-tr [1 7 0])
+    (def screw-offset-br [-2 15.5 0]))
+(when (and (false? pinky-125u) extra-row)
     (def screw-offset-tr [-3.5 6.5 0])
     (def screw-offset-br [-3.5 -6.5 0]))
-(when (and (false? pinky-15u) (false? extra-row))
+(when (and (false? pinky-125u) (false? extra-row))
     (def screw-offset-tr [-4 6.5 0])
     (def screw-offset-br [-6 13 0]))
     
@@ -1395,40 +1410,40 @@
 
 ; Connectors between outer column and right wall when 1.5u keys are used
 (def pinky-connectors
-  (if pinky-15u
+  (if pinky-125u
     (apply union
            (concat
             ;; Row connections
-            (for [row (range first-15u-row (inc last-15u-row))]
+            (for [row (range first-125u-row (inc last-125u-row))]
               (triangle-hulls
                (key-place lastcol row web-post-tr)
                (key-place lastcol row wide-post-tr)
                (key-place lastcol row web-post-br)
                (key-place lastcol row wide-post-br)))
-            (if-not (= last-15u-row extra-cornerrow) (for [row (range last-15u-row (inc last-15u-row))]
+            (if-not (= last-125u-row extra-cornerrow) (for [row (range last-125u-row (inc last-125u-row))]
               (triangle-hulls
                (key-place lastcol (inc row) web-post-tr)
                (key-place lastcol row wide-post-br)
                (key-place lastcol (inc row) web-post-br))))
-            (if-not (= first-15u-row 0) (for [row (range (dec first-15u-row) first-15u-row)]
+            (if-not (= first-125u-row 0) (for [row (range (dec first-125u-row) first-125u-row)]
               (triangle-hulls
                (key-place lastcol row web-post-tr)
                (key-place lastcol (inc row) wide-post-tr)
                (key-place lastcol row web-post-br))))
 
             ;; Column connections
-            (for [row (range first-15u-row last-15u-row)]
+            (for [row (range first-125u-row last-125u-row)]
               (triangle-hulls
                (key-place lastcol row web-post-br)
                (key-place lastcol row wide-post-br)
                (key-place lastcol (inc row) web-post-tr)
                (key-place lastcol (inc row) wide-post-tr)))
-            (if-not (= last-15u-row extra-cornerrow) (for [row (range last-15u-row (inc last-15u-row))]
+            (if-not (= last-125u-row extra-cornerrow) (for [row (range last-125u-row (inc last-125u-row))]
               (triangle-hulls
                (key-place lastcol row web-post-br)
                (key-place lastcol row wide-post-br)
                (key-place lastcol (inc row) web-post-tr))))
-            (if-not (= first-15u-row 0) (for [row (range (dec first-15u-row) first-15u-row)]
+            (if-not (= first-125u-row 0) (for [row (range (dec first-125u-row) first-125u-row)]
               (triangle-hulls
                (key-place lastcol row web-post-br)
                (key-place lastcol (inc row) wide-post-tr)
