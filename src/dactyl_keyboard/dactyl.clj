@@ -204,7 +204,7 @@
                       cap-top-height))
 (def column-x-delta (+ -1 (- (* column-radius (Math/sin β)))))
 
-(defn offset-for-column [col, row]
+(defn offset-for-column-standard [col, row]
   (cond (and pinky-125u
            (= col lastcol)
            (<= row last-125u-row)
@@ -212,10 +212,17 @@
     4.7625
     :else 0))
 
+(defn offset-for-column-ortho [col, row]
+  (cond (and pinky-125u
+             (= col lastcol)
+             (= row cornerrow))
+        -2
+        :else 0))
+
 (defn apply-key-geometry [translate-fn rotate-x-fn rotate-y-fn column row shape]
   (let [column-angle (* β (- centercol column))
         placed-shape (->> shape
-                          (translate-fn [(offset-for-column column, row) 0 (- row-radius)])
+                          (translate-fn [(offset-for-column-standard column, row) 0 (- row-radius)])
                           (rotate-x-fn  (* α (- centerrow row)))
                           (translate-fn [0 0 row-radius])
                           (translate-fn [0 0 (- column-radius)])
@@ -224,7 +231,8 @@
                           (translate-fn (column-offset column)))
         column-z-delta (* column-radius (- 1 (Math/cos column-angle)))
         placed-shape-ortho (->> shape
-                                (translate-fn [0 0 (- row-radius)])
+                                (translate-fn [(offset-for-column-ortho column, row) 0 (- row-radius)])
+                                ; (translate-fn [0 0 (- row-radius)])
                                 (rotate-x-fn  (* α (- centerrow row)))
                                 (translate-fn [0 0 row-radius])
                                 (rotate-y-fn  column-angle)
@@ -1353,8 +1361,8 @@
     (def screw-offset-tr [1 7 0])
     (def screw-offset-br [3 15.5 0]))
 (when (and pinky-125u (false? extra-row) (< last-125u-row cornerrow))
-    (def screw-offset-tr [1 7 0])
-    (def screw-offset-br [-2 15.5 0]))
+    (def screw-offset-tr [1 5.5 0])
+    (def screw-offset-br [-4 15.5 0]))
 (when (and (false? pinky-125u) extra-row)
     (def screw-offset-tr [-3.5 6.5 0])
     (def screw-offset-br [-3.5 -6.5 0]))
@@ -1376,9 +1384,9 @@
     (def screw-offset-tm [9.5 -4.5 0])
     (def screw-offset-bm [-1 -7 0]))
 (when (and (= thumb-style "mini") (false? inner-column))
-    (def screw-offset-bl [-1 4.2 0])
-    (def screw-offset-tm [9.5 -4.5 0])
-    (def screw-offset-bm [-1 -7 0]))
+    (def screw-offset-bl [1 0 0])
+    (def screw-offset-tm [2 -3 0])
+    (def screw-offset-bm [1 -7 0]))
 (when (and (= thumb-style "default") inner-column)
     (def screw-offset-bl [5 -6 0])
     (def screw-offset-tm [9.5 -4.5 0])
@@ -1389,7 +1397,7 @@
     (def screw-offset-bm [8 -1 0]))
 
          (defn screw-insert-all-shapes [bottom-radius top-radius height]
-  (union (screw-insert 0 0         bottom-radius top-radius height [8 10.5 0])
+  (union (screw-insert 0 0         bottom-radius top-radius height [8 10 0])
          (screw-insert 0 lastrow   bottom-radius top-radius height screw-offset-bl)
          (screw-insert lastcol lastrow  bottom-radius top-radius height screw-offset-br)
          (screw-insert lastcol 0         bottom-radius top-radius height screw-offset-tr)
