@@ -149,7 +149,7 @@
 (def mx_clone_hole_hotswap  ;;Special hole for hotswap holes because the box has to be a bit bigger so it makes contact with the kalih cutout.
   (->>(difference 
         (union
-          (->>(cube 17.3, 18, 5)(translate [0 0 -0.9]))   ;;Main box that everything is cut from
+          (->>(cube 17.3, 18.2, 5)(translate [0 0 -0.9]))   ;;Main box that everything is cut from
           )
         (->>(cube 14.8, 13.8, 6)(translate [0 0 -1]) ) ;;Inner square cut out
         (->>(cube 14.2, 15., 4.32)(translate [0 0 -2])) ;;The buttom inner cut out.  This modifies the notch height
