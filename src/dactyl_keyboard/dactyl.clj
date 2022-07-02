@@ -63,10 +63,6 @@
 (def fixed-z [12.1    8.3 0  5   10.7 14.5 17.5])
 (def fixed-tenting (deg2rad 0))
 
-; If you use Cherry MX or Gateron switches, this can be turned on.
-; If you use other switches such as Kailh, you should set this as false
-(def create-side-nubs? false)
-
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;; General variables ;;
 ;;;;;;;;;;;;;;;;;;;;;;;
@@ -77,54 +73,102 @@
 (def extra-cornerrow (if extra-row lastrow cornerrow))
 (def innercol-offset (if inner-column 1 0))
 
-;;;;;;;;;;;;;;;;;
-;; Switch Hole ;;
-;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;hot-swappable holes quality settings;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(def wall-step 0.2)
+(def wall-sphere-n 30)    ;; 30 for high quality Sphere resolution, lower for faster renders mainly present on case edge top. Can affect wall thickness
+(def circle_facets 20)   ;; 100 for high quality
+(def sla_tolerance 0)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;switch hole code;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(def pink [220/255 163/255 163/255 1])
+(def red [220/255 20/255 20/255 1])
+(def blue [20/255 20/255 220/255 1])
+
+
+(def kailh_features ;;Contains the solder points and the protruding circles
+  (union 
+    (->> (union
+           (->> (cylinder 1.65 1.5)(with-fn circle_facets)(translate [0 0 0]));;increased diameter by .02
+           (difference	;;this is for making the slope for the left hole.
+                        (->> (cylinder 1.65 4)(with-fn circle_facets)(rotate (deg2rad 35) [1 0 0]));;increased diameter by .02
+                        (->>(cube 4 4 4)(translate [0 -2 0])))	
+           (->> (cylinder 1.6 1.5)(with-fn circle_facets)(translate [6.35 2.540 0]))
+           (->>(difference	;;this is for making the slope for the right hole.
+                            (->> (cylinder 1.6 3.2)(with-fn circle_facets))
+                            (->>(cube 4 4 4)(translate [0 -2 0])))
+                            (rotate (deg2rad 15) [1 0 0])(translate [6.35 2.540 0.5]))							
+           ) (translate [-3.17 -1.27 1.65]))
+    (->> (cube 2.7 1.9 1.8)(translate [6.8 1.5 0])) ;right solder point on kalih socket
+    (->> (cube 2.7 1.9 1.8)(translate [-6.8 -1.5 0]));;left solder point
+    )
+  )
+
+(def kalih_socket
+  (->>(difference
+    (union (cube 12 (+  sla_tolerance 6) ( + 1.825 sla_tolerance)) 
+           kailh_features)
+    (->> (cube 3.7   4  3)(translate [4.1 (- -3.05 (/ sla_tolerance 2)) 0])) ;;		(->> (cube 3.2 3 3)(translate [4.1 -2.6 0]))			
+    )
+  (color pink)))
+
+(def kalih_tab
+  (union
+    (->> (difference 
+           (->>( cube 9 2.7 1.5)(translate [0 2.95 -2.25]) )
+           (->> (cube 9.1 1 2.5)(translate [0 0.9 -2.45])(rotate (deg2rad 15) [1 0 0]))  ;decreased translate y by ;;controls the clip in part of the kalih socket holder overhang
+           ))
+    (difference
+      (->>( cube 3.8 2.3 1.)(translate [-3.6 -4.1 -2.0]) )  ;;to prevent cracking decreased cube y from 2.3 to 2
+      ;(->> (cube 4.8 1.8 0.9)(rotate (deg2rad 55) [1 0 0])(translate [-3.6 -3.25 -2.6]))
+      )))
+
+(def kalih_cutout
+  (->>(union 
+        (difference
+          (union 
+            (->> (cube 11 17.6 3.2)(translate [ 0 -4.5 0]))		;main box that the switch is cut from
+            (->>(cube 17.4 17.6 1)(translate [ 0.7 -4.5 1.1])) ;bottom cover that covers the remainder of the bottom of the switch hole
+            kalih_tab
+            )
+          #_(->> (cube 11 9.4 3)(translate [ 0 -0.4 0]))
+          (->> kalih_socket(translate [-0.4 -0.6 -0.71]))
+          (->> (cylinder (+ (/ sla_tolerance 2) 2.1) 4)(with-fn circle_facets)(translate [0.3 -4.5 0]))
+          (->>(cube 20 10 5)(translate [0 -13 0]))    ;;This cuts out part of the bottom cover.  Used to ensure drainage when SLA printing.
+          ))
+    (translate [-0.7 4.5 -1])
+    (color red)
+    )
+  )
+
+(def mx_clone_hole_hotswap  ;;Special hole for hotswap holes because the box has to be a bit bigger so it makes contact with the kalih cutout.
+  (->>(difference 
+        (union
+          (->>(cube 17.3, 17.9, 5)(translate [0 0 -0.9]))   ;;Main box that everything is cut from
+          )
+        (->>(cube 14.8, 13.8, 6)(translate [0 0 -1]) ) ;;Inner square cut out
+        (->>(cube 14.2, 15., 4.32)(translate [0 0 -2])) ;;The buttom inner cut out.  This modifies the notch height
+        (->> (cube 3.7,15.,  6)(translate [(/ 8.5 2), 0, -1]));Left and right rectangle cut out.  Controls the width of notch
+        (->> (cube 3.7,15.,  6)(translate [(/ -8.5 2), 0, -1])))
+    (translate [0 0 2.5])
+    (color blue)))
+
+(def single-plate
+    (union (->> mx_clone_hole_hotswap (rotate (/ π 2) [0 0 1])) (->> kalih_cutout) (rotate (/ π 2) [0 0 1])))
 
 (def keyswitch-height 14.15)
 (def keyswitch-width 14.15)
 
 (def sa-profile-key-height 12.7)
 
-(def plate-thickness 4)
-(def side-nub-thickness 4)
-(def retention-tab-thickness 1.5)
-(def retention-tab-hole-thickness (- (+ plate-thickness 0.5) retention-tab-thickness))
-(def mount-width (+ keyswitch-width 3.2))
-(def mount-height (+ keyswitch-height 2.7))
-
-(def single-plate
-  (let [top-wall (->> (cube (+ keyswitch-width 3) 1.5 (+ plate-thickness 0.5))
-                      (translate [0
-                                  (+ (/ 1.5 2) (/ keyswitch-height 2))
-                                  (- (/ plate-thickness 2) 0.25)]))
-        left-wall (->> (cube 1.8 (+ keyswitch-height 3) (+ plate-thickness 0.5))
-                       (translate [(+ (/ 1.8 2) (/ keyswitch-width 2))
-                                   0
-                                   (- (/ plate-thickness 2) 0.25)]))
-        side-nub (->> (binding [*fn* 30] (cylinder 1 2.75))
-                      (rotate (/ π 2) [1 0 0])
-                      (translate [(+ (/ keyswitch-width 2)) 0 1])
-                      (hull (->> (cube 1.5 2.75 side-nub-thickness)
-                                 (translate [(+ (/ 1.5 2) (/ keyswitch-width 2))
-                                             0
-                                             (/ side-nub-thickness 2)])))
-                      (translate [0 0 (- plate-thickness side-nub-thickness)]))
-        plate-half (union top-wall left-wall (if create-side-nubs? (with-fn 100 side-nub)))
-        top-nub (->> (cube 5 5 retention-tab-hole-thickness)
-                     (translate [(+ (/ keyswitch-width 2.5)) 0 (- (/ retention-tab-hole-thickness 2) 0.5)]))
-        top-nub-pair (union top-nub
-                            (->> top-nub
-                                 (mirror [1 0 0])
-                                 (mirror [0 1 0])))]
-    (difference
-     (union plate-half
-            (->> plate-half
-                 (mirror [1 0 0])
-                 (mirror [0 1 0])))
-     (->>
-      top-nub-pair
-      (rotate (/ π 2) [0 0 1])))))
+(def plate-thickness 4.1)
+(def mount-width (+ keyswitch-width 3.5))
+(def mount-height (+ keyswitch-height 3))
 
 ;;;;;;;;;;;;;;;;
 ;; SA Keycaps ;;
@@ -1365,7 +1409,7 @@
     (def screw-offset-br [3 15.5 0]))
 (when (and pinky-125u (false? extra-row) (< last-125u-row cornerrow))
     (def screw-offset-tr [1 5.5 0])
-    (def screw-offset-br [-4 15.5 0]))
+    (def screw-offset-br [-5 15.5 0]))
 (when (and (false? pinky-125u) extra-row)
     (def screw-offset-tr [-3.5 6.5 0])
     (def screw-offset-br [-3.5 -6.5 0]))
@@ -1509,6 +1553,16 @@
                 caps-fill
                 screw-insert-outers)
               (translate [0 0 -10] screw-insert-screw-holes))))))
+
+(spit "things/switch-socket.scad"
+      (write-scad
+        (extrude-linear
+          {:height 2.6 :center false}
+          (project
+            (union
+              (->> single-plate
+                (key-place 3 3)))
+            ))))
 
 (spit "things/right-plate-laser.scad"
       (write-scad
