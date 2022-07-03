@@ -150,25 +150,25 @@
           (->> (cylinder (+ (/ sla_tolerance 2) 2.1) 4)(with-fn circle_facets)(translate [0.3 -4.5 0]))
           (->>(cube 20 10 5)(translate [0 -13 0]))    ;;This cuts out part of the bottom cover.  Used to ensure drainage when SLA printing.
           ))
-    (translate [-0.7 4.5 -1])
-    
-    )
+    (translate [-0.7 4.5 -1]))
   )
 
 
 (def mx_clone_hole_hotswap  ;;Special hole for hotswap holes because the box has to be a bit bigger so it makes contact with the kalih cutout.
   (->>(difference 
         (union
-          (->>(cube (+ keyswitch-width 3), (+ keyswitch-height 3), plate-thickness) (color blue))   ;;Main box that everything is cut from
+          (->>(cube (+ keyswitch-height 3), (+ keyswitch-width 3.5), plate-thickness) (color blue))   ;;Main box that everything is cut from
           )
         (->>(cube keyswitch-width, keyswitch-height, 6) (color green) ) ;;Inner square cut out
         (->>(cube 14.2, 15., 4.32)(translate [0 0 -1.1])) ;;The bottom inner cut out.  This modifies the notch height
         (->> (cube 3.7,15.,  6)(translate [(/ 8.5 2), 0, -0.1]));Left and right rectangle cut out.  Controls the width of notch
         (->> (cube 3.7,15.,  6)(translate [(/ -8.5 2), 0, -0.1])))
-    (translate [0 0 2])))
+    (translate [0 0 2])
+    (rotate (/ π 2) [0 0 1])
+    ))
 
 (def single-plate
-    (union (->> mx_clone_hole_hotswap (rotate (/ π 2) [0 0 1])) (->> kalih_cutout) (rotate (/ π 2) [0 0 1])))
+    (union (->> mx_clone_hole_hotswap ) (->> kalih_cutout) (rotate (/ π 2) [0 0 1])))
 
 
 ;;;;;;;;;;;;;;;;
