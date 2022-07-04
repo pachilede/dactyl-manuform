@@ -79,7 +79,7 @@
 (def wall-step 0.2)
 (def wall-sphere-n 30)    ;; 30 for high quality Sphere resolution, lower for faster renders mainly present on case edge top. Can affect wall thickness
 (def circle_facets 20)   ;; 100 for high quality
-(def sla_tolerance 0)
+(def sla_tolerance 0.5)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -128,36 +128,38 @@
   (color pink)))
 
 (def kalih_tab
-  (union
-    (->> (difference 
-           (->>( cube 9 2.7 1.5)(translate [0 2.95 -2.25]) )
-           (->> (cube 9.1 1 2.5)(translate [0 0.9 -2.45])(rotate (deg2rad 15) [1 0 0]))  ;decreased translate y by ;;controls the clip in part of the kalih socket holder overhang
+  (->> (union
+         (->> (difference 
+                (->>( cube 9 2.7 1.5)(translate [0 2.95 -2.25]) )
+                (->> (cube 9.1 1 2.5)(translate [0 0.9 -2.45])(rotate (deg2rad 15) [1 0 0]))  ;decreased translate y by ;;controls the clip in part of the kalih socket holder overhang
+                ))
+         (difference
+           (->>( cube 3.8 2.3 1.)(translate [-3.6 -4.1 -2.0]) )  ;;to prevent cracking decreased cube y from 2.3 to 2
            ))
-    (difference
-      (->>( cube 3.8 2.3 1.)(translate [-3.6 -4.1 -2.0]) )  ;;to prevent cracking decreased cube y from 2.3 to 2
-      )))
+       (color pink)
+  ))
 
 (def kalih_cutout
   (->>(union 
         (difference
           (union 
-            (->> (cube 11 (+ keyswitch-height 3) 3.2)(translate [ 0 -4.5 0]) (color green))		;main box that the switch is cut from
-            (->> (cube 17.2 (+ keyswitch-height 3) 1)(translate [ 0.7 -4.5 1.1]) (color red)) ;bottom cover that covers the remainder of the bottom of the switch hole
+            (->> (cube 11 (+ keyswitch-width 3) 3.2)(translate [ 0 -4.5 0]) (color green))		;main box that the switch is cut from
+            (->> (cube (+ keyswitch-width 3.5) (+ keyswitch-width 3) 1)(translate [ 0.7 -4.5 1.1]) (color red)) ;bottom cover that covers the remainder of the bottom of the switch hole
             kalih_tab
             )
           #_(->> (cube 11 9.4 3)(translate [ 0 -0.4 0]))
           (->> kalih_socket(translate [-0.4 -0.6 -0.71]))
-          (->> (cylinder (+ (/ sla_tolerance 2) 2.1) 4)(with-fn circle_facets)(translate [0.3 -4.5 0]))
+          (->> (cylinder 2.1 4)(with-fn circle_facets)(translate [0.3 -4.5 0]))
           (->>(cube 20 10 5)(translate [0 -13 0]))    ;;This cuts out part of the bottom cover.  Used to ensure drainage when SLA printing.
           ))
-    (translate [-0.7 4.5 -1]))
+    (translate [-0.7 4.5 -1.5]))
   )
 
 
 (def mx_clone_hole_hotswap  ;;Special hole for hotswap holes because the box has to be a bit bigger so it makes contact with the kalih cutout.
   (->>(difference 
         (union
-          (->>(cube (+ keyswitch-height 3), (+ keyswitch-width 3.5), plate-thickness) (color blue))   ;;Main box that everything is cut from
+          (->>(cube (+ keyswitch-height 3), (+ keyswitch-width 3.5), 4.5) (color blue))   ;;Main box that everything is cut from
           )
         (->>(cube keyswitch-width, keyswitch-height, 6) (color green) ) ;;Inner square cut out
         (->>(cube 14.2, 15., 4.32)(translate [0 0 -1.1])) ;;The bottom inner cut out.  This modifies the notch height
