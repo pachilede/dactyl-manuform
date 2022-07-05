@@ -125,7 +125,7 @@
            kailh_features)
     (->> (cube 4 4  3)(translate [4.4 (- -3.05 (/ sla_tolerance 2)) 0])) ;;		(->> (cube 3.2 3 3)(translate [4.1 -2.6 0]))			
     )
-  (color pink)))
+  ))
 
 (def kalih_tab
   (->> (union
@@ -170,7 +170,7 @@
     ))
 
 (def single-plate
-    (union (->> mx_clone_hole_hotswap ) (->> kalih_cutout) (rotate (/ π 2) [0 0 1])))
+    (->> (union (->> mx_clone_hole_hotswap ) (->> kalih_cutout) (rotate (/ π 2) [0 0 1])) (translate [0 0 -0.25])))
 
 
 ;;;;;;;;;;;;;;;;
