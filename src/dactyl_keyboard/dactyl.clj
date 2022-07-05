@@ -79,7 +79,7 @@
 (def wall-step 0.2)
 (def wall-sphere-n 30)    ;; 30 for high quality Sphere resolution, lower for faster renders mainly present on case edge top. Can affect wall thickness
 (def circle_facets 20)   ;; 100 for high quality
-(def sla_tolerance 0.5)
+(def sla_tolerance 0.25)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -145,12 +145,10 @@
           (union 
             (->> (cube 11 (+ keyswitch-width 3) 3.2)(translate [ 0 -4.5 0]) (color green))		;main box that the switch is cut from
             (->> (cube (+ keyswitch-width 3.5) (+ keyswitch-width 3) 1)(translate [ 0.7 -4.5 1.1]) (color red)) ;bottom cover that covers the remainder of the bottom of the switch hole
-            kalih_tab
-            )
-          #_(->> (cube 11 9.4 3)(translate [ 0 -0.4 0]))
+            kalih_tab)
           (->> kalih_socket(translate [-0.4 -0.6 -0.71]))
           (->> (cylinder 2.1 4)(with-fn circle_facets)(translate [0.3 -4.5 0]))
-          (->>(cube 20 10 5)(translate [0 -13 0]))    ;;This cuts out part of the bottom cover.  Used to ensure drainage when SLA printing.
+          (->>(cube 8 10 5)(translate [0.7 -13 0]))    ;;This cuts out part of the bottom cover.  Used to ensure drainage when SLA printing.
           ))
     (translate [-0.7 4.5 -1.5]))
   )
@@ -159,12 +157,12 @@
 (def mx_clone_hole_hotswap  ;;Special hole for hotswap holes because the box has to be a bit bigger so it makes contact with the kalih cutout.
   (->>(difference 
         (union
-          (->>(cube (+ keyswitch-height 3), (+ keyswitch-width 3.5), 4.5) (color blue))   ;;Main box that everything is cut from
+          (->>(cube (+ keyswitch-height 3), (+ keyswitch-width 3.5), 4.8) (color blue))   ;;Main box that everything is cut from
           )
-        (->>(cube keyswitch-width, keyswitch-height, 6) (color green) ) ;;Inner square cut out
+        (->>(cube (- keyswitch-width 0.1), (- keyswitch-height 0.1), 6) (color green) ) ;;Inner square cut out
         (->>(cube 14.2, 15., 4.32)(translate [0 0 -1.1])) ;;The bottom inner cut out.  This modifies the notch height
-        (->> (cube 3.7,15.,  6)(translate [(/ 8.5 2), 0, -0.1]));Left and right rectangle cut out.  Controls the width of notch
-        (->> (cube 3.7,15.,  6)(translate [(/ -8.5 2), 0, -0.1])))
+        (->> (cube 5.5,15.,  6)(translate [(/ 8.5 2), 0, -0.1]));Left and right rectangle cut out.  Controls the width of notch
+        (->> (cube 5.5,15.,  6)(translate [(/ -8.5 2), 0, -0.1])))
     (translate [0 0 2])
     (rotate (/ π 2) [0 0 1])
     ))
@@ -1524,7 +1522,7 @@
                                  usb-holder-notch
                                  screw-insert-holes))
                    (translate [0 0 -20] (cube 350 350 40))))
-
+;
 (spit "things/right.scad"
       (write-scad model-right))
 
@@ -1557,11 +1555,6 @@
                 screw-insert-outers)
               (translate [0 0 -10] screw-insert-screw-holes))))))
 
-(spit "things/switch-socket.scad"
-      (write-scad (union single-plate)))
-
-
-
 (spit "things/right-plate-laser.scad"
       (write-scad
        (cut
@@ -1569,5 +1562,9 @@
                    (difference (union case-walls
                                       screw-insert-outers)
                                (translate [0 0 -10] screw-insert-screw-holes))))))
+;
+
+(spit "things/switch-socket.scad"
+      (write-scad (union single-plate)))
 
 (defn -main [dum] 1)  ; dummy to make it easier to batch

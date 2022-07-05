@@ -18,20 +18,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -73,7 +73,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -111,7 +111,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -119,8 +119,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -152,20 +152,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -207,7 +207,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -245,7 +245,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -253,8 +253,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -286,20 +286,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -341,7 +341,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -379,7 +379,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -387,8 +387,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -420,20 +420,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -475,7 +475,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -513,7 +513,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -521,8 +521,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -554,20 +554,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -609,7 +609,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -647,7 +647,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -655,8 +655,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -688,20 +688,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -743,7 +743,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -781,7 +781,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -789,8 +789,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -822,20 +822,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -877,7 +877,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -915,7 +915,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -923,8 +923,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -956,20 +956,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -1011,7 +1011,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -1049,7 +1049,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -1057,8 +1057,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -1090,20 +1090,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -1145,7 +1145,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -1183,7 +1183,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -1191,8 +1191,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -1224,20 +1224,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -1279,7 +1279,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -1317,7 +1317,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -1325,8 +1325,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -1358,20 +1358,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -1413,7 +1413,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -1451,7 +1451,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -1459,8 +1459,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -1492,20 +1492,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -1547,7 +1547,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -1585,7 +1585,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -1593,8 +1593,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -1626,20 +1626,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -1681,7 +1681,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -1719,7 +1719,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -1727,8 +1727,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -1760,20 +1760,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -1815,7 +1815,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -1853,7 +1853,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -1861,8 +1861,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -1894,20 +1894,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -1949,7 +1949,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -1987,7 +1987,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -1995,8 +1995,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -2028,20 +2028,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -2083,7 +2083,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -2121,7 +2121,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -2129,8 +2129,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -2162,20 +2162,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -2217,7 +2217,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -2255,7 +2255,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -2263,8 +2263,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -2296,20 +2296,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -2351,7 +2351,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -2389,7 +2389,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -2397,8 +2397,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -2430,20 +2430,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -2485,7 +2485,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -2523,7 +2523,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -2531,8 +2531,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -2564,20 +2564,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -2619,7 +2619,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -2657,7 +2657,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -2665,8 +2665,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -2698,20 +2698,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -2753,7 +2753,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -2791,7 +2791,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -2799,8 +2799,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -2832,20 +2832,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -2887,7 +2887,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -2925,7 +2925,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -2933,8 +2933,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -2966,20 +2966,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -3021,7 +3021,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -3059,7 +3059,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -3067,8 +3067,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -3100,20 +3100,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -3155,7 +3155,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -3193,7 +3193,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -3201,8 +3201,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -3234,20 +3234,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -3289,7 +3289,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -3327,7 +3327,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -3335,8 +3335,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -3368,20 +3368,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -3423,7 +3423,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -3461,7 +3461,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -3469,8 +3469,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -3502,20 +3502,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -3557,7 +3557,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -3595,7 +3595,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -3603,8 +3603,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -3636,20 +3636,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -3691,7 +3691,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -3729,7 +3729,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -3737,8 +3737,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -3770,20 +3770,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -3825,7 +3825,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -3863,7 +3863,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -3871,8 +3871,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -3904,20 +3904,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -3959,7 +3959,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -3997,7 +3997,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -4005,8 +4005,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -4038,20 +4038,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -4093,7 +4093,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -4131,7 +4131,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -4139,8 +4139,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -4172,20 +4172,20 @@ linear_extrude (height=2.6){
                                   difference () {
                                     union () {
                                       color ([4/51, 4/51, 44/51, 1]) {
-                                        cube ([17.15, 17.65, 4.5], center=true);
+                                        cube ([17.15, 17.65, 4.8], center=true);
                                       }
                                     }
                                     color ([4/51, 44/51, 4/51, 1]) {
-                                      cube ([14.15, 14.15, 6], center=true);
+                                      cube ([14.05, 14.05, 6], center=true);
                                     }
                                     translate ([0, 0, -1.1]) {
                                       cube ([14.2, 15.0, 4.32], center=true);
                                     }
                                     translate ([4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                     translate ([-4.25, 0, -0.1]) {
-                                      cube ([3.7, 15.0, 6], center=true);
+                                      cube ([5.5, 15.0, 6], center=true);
                                     }
                                   }
                                 }
@@ -4227,7 +4227,7 @@ linear_extrude (height=2.6){
                                     translate ([-0.4, -0.6, -0.71]) {
                                       difference () {
                                         union () {
-                                          cube ([12, 6.5, 2.325], center=true);
+                                          cube ([12, 6.25, 2.075], center=true);
                                           union () {
                                             translate ([-3.17, -1.27, 1.65]) {
                                               union () {
@@ -4265,7 +4265,7 @@ linear_extrude (height=2.6){
                                             }
                                           }
                                         }
-                                        translate ([4.4, -3.3, 0]) {
+                                        translate ([4.4, -3.175, 0]) {
                                           cube ([4, 4, 3], center=true);
                                         }
                                       }
@@ -4273,8 +4273,8 @@ linear_extrude (height=2.6){
                                     translate ([0.3, -4.5, 0]) {
                                       cylinder ($fn=20, h=4, r=2.1, center=true);
                                     }
-                                    translate ([0, -13, 0]) {
-                                      cube ([20, 10, 5], center=true);
+                                    translate ([0.7, -13, 0]) {
+                                      cube ([8, 10, 5], center=true);
                                     }
                                   }
                                 }
@@ -14476,20 +14476,20 @@ linear_extrude (height=2.6){
                               difference () {
                                 union () {
                                   color ([4/51, 4/51, 44/51, 1]) {
-                                    cube ([17.15, 17.65, 4.5], center=true);
+                                    cube ([17.15, 17.65, 4.8], center=true);
                                   }
                                 }
                                 color ([4/51, 44/51, 4/51, 1]) {
-                                  cube ([14.15, 14.15, 6], center=true);
+                                  cube ([14.05, 14.05, 6], center=true);
                                 }
                                 translate ([0, 0, -1.1]) {
                                   cube ([14.2, 15.0, 4.32], center=true);
                                 }
                                 translate ([4.25, 0, -0.1]) {
-                                  cube ([3.7, 15.0, 6], center=true);
+                                  cube ([5.5, 15.0, 6], center=true);
                                 }
                                 translate ([-4.25, 0, -0.1]) {
-                                  cube ([3.7, 15.0, 6], center=true);
+                                  cube ([5.5, 15.0, 6], center=true);
                                 }
                               }
                             }
@@ -14531,7 +14531,7 @@ linear_extrude (height=2.6){
                                 translate ([-0.4, -0.6, -0.71]) {
                                   difference () {
                                     union () {
-                                      cube ([12, 6.5, 2.325], center=true);
+                                      cube ([12, 6.25, 2.075], center=true);
                                       union () {
                                         translate ([-3.17, -1.27, 1.65]) {
                                           union () {
@@ -14569,7 +14569,7 @@ linear_extrude (height=2.6){
                                         }
                                       }
                                     }
-                                    translate ([4.4, -3.3, 0]) {
+                                    translate ([4.4, -3.175, 0]) {
                                       cube ([4, 4, 3], center=true);
                                     }
                                   }
@@ -14577,8 +14577,8 @@ linear_extrude (height=2.6){
                                 translate ([0.3, -4.5, 0]) {
                                   cylinder ($fn=20, h=4, r=2.1, center=true);
                                 }
-                                translate ([0, -13, 0]) {
-                                  cube ([20, 10, 5], center=true);
+                                translate ([0.7, -13, 0]) {
+                                  cube ([8, 10, 5], center=true);
                                 }
                               }
                             }
@@ -14604,20 +14604,20 @@ linear_extrude (height=2.6){
                               difference () {
                                 union () {
                                   color ([4/51, 4/51, 44/51, 1]) {
-                                    cube ([17.15, 17.65, 4.5], center=true);
+                                    cube ([17.15, 17.65, 4.8], center=true);
                                   }
                                 }
                                 color ([4/51, 44/51, 4/51, 1]) {
-                                  cube ([14.15, 14.15, 6], center=true);
+                                  cube ([14.05, 14.05, 6], center=true);
                                 }
                                 translate ([0, 0, -1.1]) {
                                   cube ([14.2, 15.0, 4.32], center=true);
                                 }
                                 translate ([4.25, 0, -0.1]) {
-                                  cube ([3.7, 15.0, 6], center=true);
+                                  cube ([5.5, 15.0, 6], center=true);
                                 }
                                 translate ([-4.25, 0, -0.1]) {
-                                  cube ([3.7, 15.0, 6], center=true);
+                                  cube ([5.5, 15.0, 6], center=true);
                                 }
                               }
                             }
@@ -14659,7 +14659,7 @@ linear_extrude (height=2.6){
                                 translate ([-0.4, -0.6, -0.71]) {
                                   difference () {
                                     union () {
-                                      cube ([12, 6.5, 2.325], center=true);
+                                      cube ([12, 6.25, 2.075], center=true);
                                       union () {
                                         translate ([-3.17, -1.27, 1.65]) {
                                           union () {
@@ -14697,7 +14697,7 @@ linear_extrude (height=2.6){
                                         }
                                       }
                                     }
-                                    translate ([4.4, -3.3, 0]) {
+                                    translate ([4.4, -3.175, 0]) {
                                       cube ([4, 4, 3], center=true);
                                     }
                                   }
@@ -14705,8 +14705,8 @@ linear_extrude (height=2.6){
                                 translate ([0.3, -4.5, 0]) {
                                   cylinder ($fn=20, h=4, r=2.1, center=true);
                                 }
-                                translate ([0, -13, 0]) {
-                                  cube ([20, 10, 5], center=true);
+                                translate ([0.7, -13, 0]) {
+                                  cube ([8, 10, 5], center=true);
                                 }
                               }
                             }
@@ -14732,20 +14732,20 @@ linear_extrude (height=2.6){
                               difference () {
                                 union () {
                                   color ([4/51, 4/51, 44/51, 1]) {
-                                    cube ([17.15, 17.65, 4.5], center=true);
+                                    cube ([17.15, 17.65, 4.8], center=true);
                                   }
                                 }
                                 color ([4/51, 44/51, 4/51, 1]) {
-                                  cube ([14.15, 14.15, 6], center=true);
+                                  cube ([14.05, 14.05, 6], center=true);
                                 }
                                 translate ([0, 0, -1.1]) {
                                   cube ([14.2, 15.0, 4.32], center=true);
                                 }
                                 translate ([4.25, 0, -0.1]) {
-                                  cube ([3.7, 15.0, 6], center=true);
+                                  cube ([5.5, 15.0, 6], center=true);
                                 }
                                 translate ([-4.25, 0, -0.1]) {
-                                  cube ([3.7, 15.0, 6], center=true);
+                                  cube ([5.5, 15.0, 6], center=true);
                                 }
                               }
                             }
@@ -14787,7 +14787,7 @@ linear_extrude (height=2.6){
                                 translate ([-0.4, -0.6, -0.71]) {
                                   difference () {
                                     union () {
-                                      cube ([12, 6.5, 2.325], center=true);
+                                      cube ([12, 6.25, 2.075], center=true);
                                       union () {
                                         translate ([-3.17, -1.27, 1.65]) {
                                           union () {
@@ -14825,7 +14825,7 @@ linear_extrude (height=2.6){
                                         }
                                       }
                                     }
-                                    translate ([4.4, -3.3, 0]) {
+                                    translate ([4.4, -3.175, 0]) {
                                       cube ([4, 4, 3], center=true);
                                     }
                                   }
@@ -14833,8 +14833,8 @@ linear_extrude (height=2.6){
                                 translate ([0.3, -4.5, 0]) {
                                   cylinder ($fn=20, h=4, r=2.1, center=true);
                                 }
-                                translate ([0, -13, 0]) {
-                                  cube ([20, 10, 5], center=true);
+                                translate ([0.7, -13, 0]) {
+                                  cube ([8, 10, 5], center=true);
                                 }
                               }
                             }
@@ -14860,20 +14860,20 @@ linear_extrude (height=2.6){
                               difference () {
                                 union () {
                                   color ([4/51, 4/51, 44/51, 1]) {
-                                    cube ([17.15, 17.65, 4.5], center=true);
+                                    cube ([17.15, 17.65, 4.8], center=true);
                                   }
                                 }
                                 color ([4/51, 44/51, 4/51, 1]) {
-                                  cube ([14.15, 14.15, 6], center=true);
+                                  cube ([14.05, 14.05, 6], center=true);
                                 }
                                 translate ([0, 0, -1.1]) {
                                   cube ([14.2, 15.0, 4.32], center=true);
                                 }
                                 translate ([4.25, 0, -0.1]) {
-                                  cube ([3.7, 15.0, 6], center=true);
+                                  cube ([5.5, 15.0, 6], center=true);
                                 }
                                 translate ([-4.25, 0, -0.1]) {
-                                  cube ([3.7, 15.0, 6], center=true);
+                                  cube ([5.5, 15.0, 6], center=true);
                                 }
                               }
                             }
@@ -14915,7 +14915,7 @@ linear_extrude (height=2.6){
                                 translate ([-0.4, -0.6, -0.71]) {
                                   difference () {
                                     union () {
-                                      cube ([12, 6.5, 2.325], center=true);
+                                      cube ([12, 6.25, 2.075], center=true);
                                       union () {
                                         translate ([-3.17, -1.27, 1.65]) {
                                           union () {
@@ -14953,7 +14953,7 @@ linear_extrude (height=2.6){
                                         }
                                       }
                                     }
-                                    translate ([4.4, -3.3, 0]) {
+                                    translate ([4.4, -3.175, 0]) {
                                       cube ([4, 4, 3], center=true);
                                     }
                                   }
@@ -14961,8 +14961,8 @@ linear_extrude (height=2.6){
                                 translate ([0.3, -4.5, 0]) {
                                   cylinder ($fn=20, h=4, r=2.1, center=true);
                                 }
-                                translate ([0, -13, 0]) {
-                                  cube ([20, 10, 5], center=true);
+                                translate ([0.7, -13, 0]) {
+                                  cube ([8, 10, 5], center=true);
                                 }
                               }
                             }
@@ -14990,20 +14990,20 @@ linear_extrude (height=2.6){
                               difference () {
                                 union () {
                                   color ([4/51, 4/51, 44/51, 1]) {
-                                    cube ([17.15, 17.65, 4.5], center=true);
+                                    cube ([17.15, 17.65, 4.8], center=true);
                                   }
                                 }
                                 color ([4/51, 44/51, 4/51, 1]) {
-                                  cube ([14.15, 14.15, 6], center=true);
+                                  cube ([14.05, 14.05, 6], center=true);
                                 }
                                 translate ([0, 0, -1.1]) {
                                   cube ([14.2, 15.0, 4.32], center=true);
                                 }
                                 translate ([4.25, 0, -0.1]) {
-                                  cube ([3.7, 15.0, 6], center=true);
+                                  cube ([5.5, 15.0, 6], center=true);
                                 }
                                 translate ([-4.25, 0, -0.1]) {
-                                  cube ([3.7, 15.0, 6], center=true);
+                                  cube ([5.5, 15.0, 6], center=true);
                                 }
                               }
                             }
@@ -15045,7 +15045,7 @@ linear_extrude (height=2.6){
                                 translate ([-0.4, -0.6, -0.71]) {
                                   difference () {
                                     union () {
-                                      cube ([12, 6.5, 2.325], center=true);
+                                      cube ([12, 6.25, 2.075], center=true);
                                       union () {
                                         translate ([-3.17, -1.27, 1.65]) {
                                           union () {
@@ -15083,7 +15083,7 @@ linear_extrude (height=2.6){
                                         }
                                       }
                                     }
-                                    translate ([4.4, -3.3, 0]) {
+                                    translate ([4.4, -3.175, 0]) {
                                       cube ([4, 4, 3], center=true);
                                     }
                                   }
@@ -15091,8 +15091,8 @@ linear_extrude (height=2.6){
                                 translate ([0.3, -4.5, 0]) {
                                   cylinder ($fn=20, h=4, r=2.1, center=true);
                                 }
-                                translate ([0, -13, 0]) {
-                                  cube ([20, 10, 5], center=true);
+                                translate ([0.7, -13, 0]) {
+                                  cube ([8, 10, 5], center=true);
                                 }
                               }
                             }
