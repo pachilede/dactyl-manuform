@@ -79,7 +79,7 @@
 (def wall-step 0.2)
 (def wall-sphere-n 30)    ;; 30 for high quality Sphere resolution, lower for faster renders mainly present on case edge top. Can affect wall thickness
 (def circle_facets 20)   ;; 100 for high quality
-(def sla_tolerance 0.25)
+(def sla_tolerance 0.38) ; Current range is (0.25, 0.5]
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -157,7 +157,7 @@
 (def mx_clone_hole_hotswap  ;;Special hole for hotswap holes because the box has to be a bit bigger so it makes contact with the kalih cutout.
   (->>(difference 
         (union
-          (->>(cube (+ keyswitch-height 3), (+ keyswitch-width 3.5), 4.8) (color blue))   ;;Main box that everything is cut from
+          (->>(cube (+ keyswitch-height 3), (+ keyswitch-width 3.5), 5) (color blue))   ;;Main box that everything is cut from - search range (4.8, 6]
           )
         (->>(cube (- keyswitch-width 0.1), (- keyswitch-height 0.1), 6) (color green) ) ;;Inner square cut out
         (->>(cube 14.2, 15., 4.32)(translate [0 0 -1.1])) ;;The bottom inner cut out.  This modifies the notch height
