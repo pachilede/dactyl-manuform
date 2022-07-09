@@ -1,5 +1,5 @@
 union () {
-  translate ([0, 0, -0.25]) {
+  translate ([0, 0, -0.45]) {
     union () {
       rotate (a=90.0, v=[0, 0, 1]) {
         translate ([0, 0, 2]) {
@@ -63,7 +63,7 @@ union () {
             translate ([-0.4, -0.6, -0.71]) {
               difference () {
                 union () {
-                  cube ([12, 6.29, 2.1149999999999998], center=true);
+                  cube ([12, 6.3, 2.125], center=true);
                   union () {
                     translate ([-3.17, -1.27, 1.65]) {
                       union () {
@@ -101,7 +101,7 @@ union () {
                     }
                   }
                 }
-                translate ([4.4, -3.195, 0]) {
+                translate ([4.4, -3.1999999999999997, 0]) {
                   cube ([4, 4, 3], center=true);
                 }
               }

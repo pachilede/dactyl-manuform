@@ -79,7 +79,7 @@
 (def wall-step 0.2)
 (def wall-sphere-n 30)    ;; 30 for high quality Sphere resolution, lower for faster renders mainly present on case edge top. Can affect wall thickness
 (def circle_facets 20)   ;; 100 for high quality
-(def sla_tolerance 0.29) ; Current range is (0.25, 0.33]
+(def sla_tolerance 0.3) ; Current range is (0.25, 0.33]
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -168,7 +168,7 @@
     ))
 
 (def single-plate
-    (->> (union (->> mx_clone_hole_hotswap ) (->> kalih_cutout) (rotate (/ π 2) [0 0 1])) (translate [0 0 -0.25])))
+    (->> (union (->> mx_clone_hole_hotswap ) (->> kalih_cutout) (rotate (/ π 2) [0 0 1])) (translate [0 0 -0.45])))
 
 
 ;;;;;;;;;;;;;;;;

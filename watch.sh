@@ -11,7 +11,7 @@ function on_change() {
   result="$?"
   if [[ "${result}" == "0" ]]
   then
-    play "${success_sound}" 
+    play "${success_sound}" 2>/dev/null
     echo done.;
   else
     echo something went wrong.;

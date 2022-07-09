@@ -7,7 +7,7 @@ lein generate
 echo "done."
 
 
-echo "Generating right plage dxf..."
+echo "Generating right plate dxf..."
 openscad -o things/right-6x6-plate.dxf things/right-plate-laser.scad
 echo "done."
 
